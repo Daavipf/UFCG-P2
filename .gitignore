@@ -1,0 +1,5 @@
+*.class
+*.py
+.idea
+.classpath
+.project
