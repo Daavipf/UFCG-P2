@@ -10,12 +10,30 @@ public class FuncaoMonotona {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int[] numeros = new int[4];
-        String resultado = "";
         for(int i = 0; i < numeros.length; i++){
             numeros[i] = sc.nextInt();
         }
 
+        boolean crescente = true;
+        boolean decrescente = true;
 
-        System.out.println(Arrays.toString(numeros));
+        for(int i = 1; i < 4; i ++){
+            if(numeros[i] >= numeros[i-1]){
+                decrescente = false;
+            }
+            if(numeros[i] <= numeros[i-1]){
+                crescente = false;
+            }
+        }
+
+        if (crescente) {
+            System.out.println("POSSIVELMENTE ESTRITAMENTE CRESCENTE");
+        } else if (decrescente) {
+            System.out.println("POSSIVELMENTE ESTRITAMENTE DECRESCENTE");
+        } else {
+            System.out.println("FUNCAO NAO ESTRITAMENTE CRES/DECR");
+        }
+
+        sc.close();
     }
 }
